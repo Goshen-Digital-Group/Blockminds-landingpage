@@ -1,6 +1,8 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 const archetypes = [
   {
@@ -78,22 +80,42 @@ const archetypes = [
 ];
 
 const ArchetypesSection = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (sectionRef.current) {
+      const cards = sectionRef.current.querySelectorAll('.archetype-card');
+      gsap.fromTo(cards, 
+        { opacity: 0, y: 30 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          duration: 0.6, 
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%'
+          }
+        }
+      );
+    }
+  }, []);
+
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(139,110,235,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(139,110,235,0.05)_1px,transparent_1px)] bg-[size:100px_100px]" />
+    <section ref={sectionRef} id="archetypes" className="py-24 relative overflow-hidden" style={{ backgroundImage: 'url("/placeholder-bg.jpg")' }}>
+      <div className="absolute inset-0 bg-gradient-void" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="space-y-16">
           {/* Section Header */}
           <div className="text-center space-y-6">
-            <Badge variant="outline" className="fracture-border text-cyber-cyan border-cyber-cyan/50">
+            <Badge variant="outline" className="border-light-grey/50 text-light-grey">
               SOCIAL FACTIONS & GAMEPLAY ROLES
             </Badge>
-            <h2 className="font-display font-bold text-4xl md:text-6xl">
-              Explore the <span className="text-gradient">Archetypes</span>
+            <h2 className="font-display font-bold text-4xl md:text-6xl text-pure-white">
+              Explore the <span className="text-light-grey">Archetypes</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-signal-grey max-w-3xl mx-auto leading-relaxed">
               Each archetype is a social faction, gameplay role, and piece of the story. 
               When you collect, you join that role and shape the universe's evolution.
             </p>
@@ -104,48 +126,70 @@ const ArchetypesSection = () => {
             {archetypes.map((archetype, index) => (
               <Card 
                 key={archetype.name} 
-                className="fracture-border bg-card/50 backdrop-blur-sm hover-lift group cursor-pointer"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="archetype-card bg-deep-charcoal/50 border-fracture-grey/30 backdrop-blur-sm hover:border-light-grey/50 transition-all duration-300 group cursor-pointer"
               >
-                <CardContent className="p-6 space-y-4">
-                  {/* Icon & Rarity */}
-                  <div className="flex items-center justify-between">
-                    <div className={`text-3xl w-12 h-12 bg-${archetype.color}/20 rounded-lg flex items-center justify-center`}>
-                      {archetype.icon}
+                <CardContent className="p-6 space-y-4 relative">
+                  {/* Featured Image for The Fractured One */}
+                  {archetype.name === "The Fractured One" ? (
+                    <div className="flex items-center justify-center mb-4">
+                      <img 
+                        src="/lovable-uploads/130e91d7-1c41-49fa-b88c-f139dbcad55d.png" 
+                        alt="The Fractured One"
+                        className="w-16 h-16 object-contain"
+                      />
                     </div>
+                  ) : (
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="relative">
+                        <img 
+                          src="/lovable-uploads/130e91d7-1c41-49fa-b88c-f139dbcad55d.png" 
+                          alt="Coming Soon"
+                          className="w-16 h-16 object-contain blur-sm opacity-30"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <Badge variant="secondary" className="bg-void-black/80 text-signal-grey text-xs">
+                            COMING SOON
+                          </Badge>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Rarity */}
+                  <div className="text-center">
                     <Badge 
                       variant="secondary" 
-                      className={`bg-${archetype.color}/20 text-${archetype.color} border-${archetype.color}/30`}
+                      className="bg-fracture-grey/50 text-light-grey"
                     >
                       {archetype.rarity}
                     </Badge>
                   </div>
 
                   {/* Name & Type */}
-                  <div className="space-y-1">
-                    <h3 className="font-display font-bold text-lg group-hover:text-cyber-cyan transition-colors">
+                  <div className="space-y-1 text-center">
+                    <h3 className="font-display font-bold text-lg text-pure-white group-hover:text-light-grey transition-colors">
                       {archetype.name}
                     </h3>
-                    <p className={`text-sm font-mono text-${archetype.color}`}>
+                    <p className="text-sm font-mono text-signal-grey">
                       {archetype.type}
                     </p>
                   </div>
 
                   {/* Description */}
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-signal-grey text-sm leading-relaxed text-center">
                     {archetype.description}
                   </p>
 
                   {/* Traits */}
                   <div className="space-y-2">
-                    <div className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
+                    <div className="text-xs font-mono text-signal-grey uppercase tracking-wider text-center">
                       Key Traits
                     </div>
-                    <div className="flex flex-wrap gap-1">
+                    <div className="flex flex-wrap gap-1 justify-center">
                       {archetype.traits.map((trait) => (
                         <span 
                           key={trait}
-                          className="px-2 py-1 text-xs bg-fracture-grey/50 text-pure-white rounded font-mono"
+                          className="px-2 py-1 text-xs bg-fracture-grey/30 text-light-grey rounded font-mono"
                         >
                           {trait}
                         </span>
@@ -154,7 +198,7 @@ const ArchetypesSection = () => {
                   </div>
 
                   {/* Hover Effect Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyber-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-light-grey/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
                 </CardContent>
               </Card>
             ))}
@@ -162,21 +206,21 @@ const ArchetypesSection = () => {
 
           {/* CTA */}
           <div className="text-center space-y-6">
-            <h3 className="font-display font-bold text-2xl">
-              Ready to Choose Your <span className="text-cyber-cyan">Archetype</span>?
+            <h3 className="font-display font-bold text-2xl text-pure-white">
+              Ready to Choose Your <span className="text-light-grey">Archetype</span>?
             </h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-signal-grey max-w-2xl mx-auto">
               Each collection will unlock new narrative paths, exclusive utilities, 
               and community governance powers. Your archetype determines your role in the unfolding story.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-purple hover:shadow-glow-purple font-display">
+              <Button size="lg" className="bg-gradient-light text-void-black hover:shadow-glow-white font-semibold">
                 EXPLORE COLLECTION
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="fracture-border text-cyber-cyan border-cyber-cyan/50 hover:border-cyber-cyan font-display"
+                className="border-light-grey/50 text-light-grey hover:bg-light-grey/10"
               >
                 JOIN DISCORD
               </Button>
