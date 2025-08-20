@@ -1,12 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect, useState } from 'react';
+import HeroSection from '@/components/HeroSection';
+import AboutSection from '@/components/AboutSection';
+import ArchetypesSection from '@/components/ArchetypesSection';
+import RoadmapSection from '@/components/RoadmapSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className={`min-h-screen transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      {/* Hero Section */}
+      <HeroSection />
+      
+      {/* About Section */}
+      <AboutSection />
+      
+      {/* Archetypes Section */}
+      <ArchetypesSection />
+      
+      {/* Roadmap Section */}
+      <RoadmapSection />
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

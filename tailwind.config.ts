@@ -18,6 +18,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				display: ['var(--font-display)', 'Orbitron', 'monospace'],
+				mono: ['var(--font-mono)', 'JetBrains Mono', 'monospace'],
+				body: ['var(--font-body)', 'Inter', 'sans-serif']
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,16 +57,29 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				// BLOCKMINDS Custom Colors
+				'void-black': 'hsl(var(--void-black))',
+				'deep-charcoal': 'hsl(var(--deep-charcoal))',
+				'fracture-grey': 'hsl(var(--fracture-grey))',
+				'signal-grey': 'hsl(var(--signal-grey))',
+				'core-purple': 'hsl(var(--core-purple))',
+				'deep-purple': 'hsl(var(--deep-purple))',
+				'cyber-cyan': 'hsl(var(--cyber-cyan))',
+				'pale-cyan': 'hsl(var(--pale-cyan))',
+				'pure-white': 'hsl(var(--pure-white))',
+				'glitch-white': 'hsl(var(--glitch-white))',
+				'soft-white': 'hsl(var(--soft-white))'
+			},
+			backgroundImage: {
+				'gradient-void': 'var(--gradient-void)',
+				'gradient-purple': 'var(--gradient-purple)',
+				'gradient-cyber': 'var(--gradient-cyber)',
+				'gradient-fracture': 'var(--gradient-fracture)'
+			},
+			boxShadow: {
+				'glow-purple': 'var(--glow-purple)',
+				'glow-cyan': 'var(--glow-cyan)',
+				'glow-soft': 'var(--glow-soft)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
