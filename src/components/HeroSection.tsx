@@ -31,10 +31,23 @@ const HeroSection = () => {
       <section ref={heroRef} id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16" style={{ backgroundImage: 'url("/placeholder-bg.jpg")' }}>
         <div className="absolute inset-0 bg-gradient-void" />
         
+{/* Background Image with 50% Opacity */}
+<div 
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: 'url("/blockminds-assets/background/bg-4.png")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    opacity: 0.7,  // ← This applies only to the image layer
+  }}
+/>
+
         {/* Grid Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_60%,transparent_100%)]" />
 
-        <div className="container mx-auto px-4 relative z-10">
+
+
+        <div className="container mx-auto px-4 relative z-10 ">
           <div className="grid lg:grid-cols-2 gap-12 items-center hero-content">
             {/* Content */}
             <div className="space-y-8">
@@ -49,14 +62,14 @@ const HeroSection = () => {
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-signal-grey">
-                  A Universe of <span className="text-light-grey">Shattered</span> Realities
+                  A Universe of <span className="text-light-grey ">Shattered</span> Realities
                 </p>
               </div>
 
               <div className="space-y-6">
                 <p className="text-lg text-signal-grey max-w-xl leading-relaxed">
                   Step into a world where truth splinters and memory bleeds into code. 
-                  Each BLOCKMINDS NFT is a sentient shard carrying broken truths, 
+                  Each <strong>BLOCKMINDS NFT</strong>  is a <strong>sentient shard</strong>  carrying broken truths, 
                   half-memories, and a hunger to be remade.
                 </p>
 
@@ -92,15 +105,15 @@ const HeroSection = () => {
             </div>
 
             {/* Hero Image - The Fractured One */}
-            <div className="relative">
-              <div className="relative aspect-square max-w-lg mx-auto">
+            <div className="relative ">
+              <div className="relative  aspect-square max-w-lg mx-auto">
                 {/* Glow Effect */}
                 <div className="absolute inset-0 bg-light-grey/10 rounded-full blur-3xl opacity-20" />
                 
                 {/* Character Image */}
-                <div className="relative z-10 hover-lift">
+                <div className="relative z-10 hover:bg-light-grey/10">
                   <img 
-                    src="/lovable-uploads/130e91d7-1c41-49fa-b88c-f139dbcad55d.png"
+                    src="/public/blockminds-assets/blockminds-logo-transparent.png"
                     alt="The Fractured One - Genesis BLOCKMIND portrait"
                     className="w-full h-full object-contain"
                   />
@@ -109,10 +122,10 @@ const HeroSection = () => {
 
               {/* Character Label */}
               <div className="text-center mt-6 space-y-2">
-                <h3 className="font-display font-bold text-lg text-pure-white">THE FRACTURED ONE</h3>
-                <p className="font-mono text-sm text-signal-grey">Genesis Shard #001</p>
+                <h3 className="font-display font-bold text-lg text-pure-white">BLOCKMINDS</h3>
+     
                 <Badge variant="secondary" className="bg-fracture-grey/50 text-light-grey">
-                  Prophet Archetype
+                 Official Logo
                 </Badge>
               </div>
             </div>

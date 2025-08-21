@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-6">
             <div className="space-y-2">
-              <h3 className="font-display font-black text-2xl text-gradient">BLOCKMINDS</h3>
+              <h3 className="font-display font-black text-2xl text-white">BLOCKMINDS</h3>
               <p className="text-muted-foreground text-sm">
                 A Universe of Shattered Realities
               </p>
@@ -56,13 +56,7 @@ const Footer = () => {
                 We will never ask for private keys or request direct crypto transfers. 
                 Official announcements only on verified channels.
               </p>
-              <Button 
-                variant="outline" 
-                size="sm" 
-                className="w-full fracture-border text-cyber-cyan border-cyber-cyan/50 text-xs"
-              >
-                VERIFY OFFICIAL CHANNELS
-              </Button>
+          
             </div>
           </div>
         </div>
@@ -73,13 +67,7 @@ const Footer = () => {
             <div className="text-sm text-muted-foreground">
               © 2024 BLOCKMINDS. All rights reserved.
             </div>
-            <div className="flex items-center gap-4 text-sm">
-              <a href="#" className="text-muted-foreground hover:text-cyber-cyan transition-colors">Privacy Policy</a>
-              <a href="#" className="text-muted-foreground hover:text-cyber-cyan transition-colors">Terms of Service</a>
-              <Badge variant="outline" className="fracture-border text-core-purple border-core-purple/50">
-                Official Contract: 0x...
-              </Badge>
-            </div>
+            
           </div>
         </div>
       </div>

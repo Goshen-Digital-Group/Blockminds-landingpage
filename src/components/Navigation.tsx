@@ -8,7 +8,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 2);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -17,23 +17,50 @@ const Navigation = () => {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
+    { name: 'About', href: '#About' },
     { name: 'Archetypes', href: '#archetypes' },
     { name: 'Roadmap', href: '#roadmap' },
+    { name: 'Team', href: '#teams' },
     { name: 'Community', href: '#community' }
   ];
 
+  // Unified scroll handler
+  const handleScrollToSection = (e: React.MouseEvent, targetId: string) => {
+    e.preventDefault();
+
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      const navbarHeight = 80; // Approx height of your fixed navbar
+      const offsetTop = element.offsetTop - navbarHeight;
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    } else {
+      console.warn(`Element #${targetId} not found in DOM`);
+    }
+
+    // Close mobile menu after navigation
+    setIsOpen(false);
+  };
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-void-black/95 backdrop-blur-md border-b border-fracture-grey/30' : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-4">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-void-black/95 backdrop-blur-md border-b border-fracture-grey/30'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="container mx-auto px-4 " >
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/4fd5c5b8-2b7b-4928-8047-fadafe5a1b48.png" 
-              alt="BLOCKMINDS Logo" 
+            <img
+              src="/lovable-uploads/4fd5c5b8-2b7b-4928-8047-fadafe5a1b48.png"
+              alt="BLOCKMINDS Logo"
               className="w-8 h-8 mr-3"
             />
             <span className="font-display font-bold text-xl text-pure-white">
@@ -47,18 +74,23 @@ const Navigation = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-signal-grey hover:text-pure-white transition-colors duration-200 font-medium"
+                onClick={(e) => handleScrollToSection(e, link.href.replace('#', ''))}
+                className="text-signal-grey hover:text-pure-white transition-colors duration-200 font-medium cursor-pointer"
               >
                 {link.name}
               </a>
             ))}
           </div>
 
-          {/* Buy Button */}
+          {/* Buy Button - Desktop */}
           <div className="hidden md:block">
-            <Button 
-              size="sm" 
+            <Button
+              size="sm"
               className="bg-gradient-light text-void-black hover:shadow-glow-white font-semibold"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open('https://example.com/buy', '_blank');
+              }}
             >
               BUY NOW
             </Button>
@@ -67,7 +99,9 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-pure-white"
+            className="md:hidden text-pure-white p-2"
+            aria-expanded={isOpen}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -81,16 +115,21 @@ const Navigation = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="block px-3 py-2 text-signal-grey hover:text-pure-white transition-colors duration-200 font-medium"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleScrollToSection(e, link.href.replace('#', ''))}
+                  className="block px-3 py-2 text-signal-grey hover:text-pure-white transition-colors duration-200 font-medium cursor-pointer"
                 >
                   {link.name}
                 </a>
               ))}
               <div className="px-3 py-2">
-                <Button 
-                  size="sm" 
+                <Button
+                  size="sm"
                   className="w-full bg-gradient-light text-void-black hover:shadow-glow-white font-semibold"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open('https://example.com/buy', '_blank');
+                    setIsOpen(false);
+                  }}
                 >
                   BUY NOW
                 </Button>

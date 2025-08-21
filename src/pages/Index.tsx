@@ -6,6 +6,7 @@ import ArchetypesSection from '@/components/ArchetypesSection';
 import OfficialLaunchSection from '@/components/OfficialLaunchSection';
 import SocialsSection from '@/components/SocialsSection';
 import RoadmapSection from '@/components/RoadmapSection';
+import TeamSection from '@/components/TeamSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -21,9 +22,10 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <ArchetypesSection />
-      <OfficialLaunchSection />
-      <SocialsSection />
       <RoadmapSection />
+      <TeamSection />
+      <OfficialLaunchSection />
+      <SocialsSection /> {/* This is #community */}
       <Footer />
     </div>
   );

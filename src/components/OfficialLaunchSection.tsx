@@ -7,7 +7,7 @@ import { useToast } from '@/hooks/use-toast';
 const OfficialLaunchSection = () => {
   const { toast } = useToast();
   
-  const contractAddress = "0x742d35Cc6634C0532925a3b8D484329d9EB71234";
+  const contractAddress = "XXXXXX REDACTED XXXXXX";
 
   const handleCopyAddress = () => {
     navigator.clipboard.writeText(contractAddress);
@@ -20,7 +20,22 @@ const OfficialLaunchSection = () => {
   return (
     <section className="py-16 relative" style={{ backgroundImage: 'url("/placeholder-bg.jpg")' }}>
       <div className="absolute inset-0 bg-void-black/90" />
+
+      {/* Background Image with 50% Opacity */}
+<div 
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: 'url("/blockminds-assets/background/bg-6.png")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    opacity: 0.7,  // ← This applies only to the image layer
+  }}
+/>
       
+    {/* Grid Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_60%,transparent_100%)]" />
+
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto space-y-12">
           {/* Official Launch Header */}
@@ -93,11 +108,17 @@ const OfficialLaunchSection = () => {
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-deep-charcoal/30 border-fracture-grey/20 hover:border-light-grey/30 transition-colors">
                 <CardContent className="p-6 text-center">
-                  <h4 className="font-display font-bold text-lg text-pure-white mb-2">OpenSea</h4>
-                  <p className="text-signal-grey text-sm mb-4">Primary marketplace for Ethereum NFTs</p>
+                  <h4 className="font-display font-bold text-lg text-pure-white mb-2">MagicEden</h4>
+                  <p className="text-signal-grey text-sm mb-4">Primary marketplace</p>
+                     <Button variant="outline" size="sm" className="border-light-grey/50 text-light-grey">
+                    Coming Soon
+                  </Button>
+                    {/* Disable for a moment */}
+                     {/* 
                   <Button variant="outline" size="sm" className="border-light-grey/50 text-light-grey">
                     Visit Store
                   </Button>
+                   */}
                 </CardContent>
               </Card>
 
@@ -105,9 +126,15 @@ const OfficialLaunchSection = () => {
                 <CardContent className="p-6 text-center">
                   <h4 className="font-display font-bold text-lg text-pure-white mb-2">Official Mint</h4>
                   <p className="text-signal-grey text-sm mb-4">Direct from our smart contract</p>
+                    <Button variant="outline" size="sm" className="border-light-grey/50 text-light-grey">
+                    Coming Soon
+                  </Button>
+                   {/* Disable for a moment */}
+                     {/* 
                   <Button size="sm" className="bg-gradient-light text-void-black font-semibold">
                     Mint Now
                   </Button>
+                   */}
                 </CardContent>
               </Card>
 

@@ -9,7 +9,7 @@ const archetypes = [
     name: "The Fractured One",
     type: "Prophet",
     description: "Carries primal shards of lost truth. Rare, narrative-bearing NFTs reserved for genesis holders.",
-    rarity: "Legendary",
+    rarity: "Active",
     color: "core-purple",
     icon: "🔮",
     traits: ["Genesis Echofield", "Primal Seal", "Truth Fragments"]
@@ -18,7 +18,7 @@ const archetypes = [
     name: "Echo Blocks",
     type: "Fragmented",
     description: "Reactive shards that replay echoes of the past. Common-to-rare; unpredictable utility.",
-    rarity: "Common",
+    rarity: "Dormant",
     color: "cyber-cyan",
     icon: "📡",
     traits: ["Memory Loop", "Echo Resonance", "Temporal Drift"]
@@ -27,7 +27,7 @@ const archetypes = [
     name: "Mindwelders",
     type: "Unifiers",
     description: "Carry multiple consciousness scars and can sync traits for combined utility.",
-    rarity: "Rare",
+    rarity: "Dormant",
     color: "core-purple",
     icon: "🔗",
     traits: ["Multi-Sync", "Weave Patterns", "Unity Bonds"]
@@ -36,16 +36,16 @@ const archetypes = [
     name: "The Hollowed",
     type: "Corrupted",
     description: "Transparent, glitching shards useful for dark-themed quests and corrupted lore arcs.",
-    rarity: "Uncommon",
+    rarity: "Dormant",
     color: "signal-grey",
     icon: "👁️",
     traits: ["Void Touch", "Corruption Field", "Dark Whispers"]
   },
   {
     name: "The Syncborn",
-    type: "Evolved",
+    type: "Dormant",
     description: "Fully integrated with the fractured system; likely to receive special cross-platform perks.",
-    rarity: "Epic",
+    rarity: "Dormant",
     color: "cyber-cyan",
     icon: "⚡",
     traits: ["Perfect Sync", "System Integration", "Evolution Mark"]
@@ -54,7 +54,7 @@ const archetypes = [
     name: "The Signalborn",
     type: "Echoes of the Dead",
     description: "Ethereal, whisper-bearing shards that deliver hidden lore drops.",
-    rarity: "Rare",
+    rarity: "Dormant",
     color: "pale-cyan",
     icon: "👻",
     traits: ["Ghost Signal", "Ethereal Form", "Death Echo"]
@@ -63,7 +63,7 @@ const archetypes = [
     name: "The Coreless",
     type: "Rebels",
     description: "Anti-MindSeal, anti-order; they'll anchor rebellion storylines and PvP mechanics.",
-    rarity: "Uncommon",
+    rarity: "Dormant",
     color: "error-red",
     icon: "⚔️",
     traits: ["Rebellion Mark", "Chaos Field", "Anti-Sync"]
@@ -72,7 +72,7 @@ const archetypes = [
     name: "Keepers of Threadline",
     type: "Sages",
     description: "Guardians of fragmented code—used for lore-anchoring events and story restoration.",
-    rarity: "Epic",
+    rarity: "Dormant",
     color: "warning-orange",
     icon: "📚",
     traits: ["Thread Keeper", "Lore Guardian", "Code Restoration"]
@@ -104,6 +104,16 @@ const ArchetypesSection = () => {
   return (
     <section ref={sectionRef} id="archetypes" className="py-24 relative overflow-hidden" style={{ backgroundImage: 'url("/placeholder-bg.jpg")' }}>
       <div className="absolute inset-0 bg-gradient-void" />
+      {/* Background Image with 50% Opacity */}
+<div 
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: 'url("/blockminds-assets/background/bg-.png")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    opacity: 0.7,  // ← This applies only to the image layer
+  }}
+/>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="space-y-16">
@@ -122,87 +132,95 @@ const ArchetypesSection = () => {
           </div>
 
           {/* Archetypes Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {archetypes.map((archetype, index) => (
-              <Card 
-                key={archetype.name} 
-                className="archetype-card bg-deep-charcoal/50 border-fracture-grey/30 backdrop-blur-sm hover:border-light-grey/50 transition-all duration-300 group cursor-pointer"
+<div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+  {archetypes.map((archetype) => (
+    <Card 
+      key={archetype.name} 
+      className="archetype-card bg-deep-charcoal/50 border-fracture-grey/30 backdrop-blur-sm hover:border-light-grey/50 transition-all duration-300 group cursor-pointer"
+    >
+      <CardContent className="p-6 space-y-4 relative">
+        {/* Unified Image Display */}
+        {archetype.name === "The Fractured One" ? (
+          // ✅ Real Image: 250×250px
+          <div className="flex items-center justify-center mb-4">
+            <img 
+              src="/lovable-uploads/130e91d7-1c41-49fa-b88c-f139dbcad55d.png"
+              alt="The Fractured One"
+              className="w-[250px] h-[250px] object-contain max-w-none max-h-none"
+              style={{ width: '250px', height: '250px' }}
+            />
+          </div>
+        ) : (
+          // ✅ Generic "Coming Soon" – same size, blurred, badge
+          <div className="flex items-center justify-center mb-4">
+            <div 
+              className="relative inline-block w-[250px] h-[250px]"
+              style={{ width: '250px', height: '250px' }}
+            >
+              {/* Generic Placeholder (not the real NFT!) */}
+              <img 
+                src="/lovable-uploads/130e91d7-1c41-49fa-b88c-f139dbcad55d.png"
+                alt="Coming Soon"
+                className="w-full h-full object-contain max-w-none max-h-none blur-sm opacity-70"
+                style={{ width: '250px', height: '250px' }}
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Badge 
+                  variant="secondary" 
+                  className="bg-void-black/80 text-signal-grey text-sm font-mono uppercase  tracking-wider px-3 py-1.5 z-10"
+                >
+                  REDACTED
+                </Badge>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Rarity */}
+        <div className="text-center">
+          <Badge variant="secondary" className="bg-fracture-grey/50 text-light-grey">
+            {archetype.rarity}
+          </Badge>
+        </div>
+
+        {/* Name & Type */}
+        <div className="space-y-1 text-center">
+          <h3 className="font-display font-bold text-lg text-pure-white group-hover:text-light-grey transition-colors">
+            {archetype.name}
+          </h3>
+          <p className="text-sm font-mono text-signal-grey">
+            {archetype.type}
+          </p>
+        </div>
+
+        {/* Description */}
+        <p className="text-signal-grey text-sm leading-relaxed text-center">
+          {archetype.description}
+        </p>
+
+        {/* Traits */}
+        <div className="space-y-2">
+          <div className="text-xs font-mono text-signal-grey uppercase tracking-wider text-center">
+            Key Traits
+          </div>
+          <div className="flex flex-wrap gap-1 justify-center">
+            {archetype.traits.map((trait) => (
+              <span 
+                key={trait}
+                className="px-2 py-1 text-xs bg-fracture-grey/30 text-light-grey rounded font-mono"
               >
-                <CardContent className="p-6 space-y-4 relative">
-                  {/* Featured Image for The Fractured One */}
-                  {archetype.name === "The Fractured One" ? (
-                    <div className="flex items-center justify-center mb-4">
-                      <img 
-                        src="/lovable-uploads/130e91d7-1c41-49fa-b88c-f139dbcad55d.png" 
-                        alt="The Fractured One"
-                        className="w-16 h-16 object-contain"
-                      />
-                    </div>
-                  ) : (
-                    <div className="flex items-center justify-center mb-4">
-                      <div className="relative">
-                        <img 
-                          src="/lovable-uploads/130e91d7-1c41-49fa-b88c-f139dbcad55d.png" 
-                          alt="Coming Soon"
-                          className="w-16 h-16 object-contain blur-sm opacity-30"
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <Badge variant="secondary" className="bg-void-black/80 text-signal-grey text-xs">
-                            COMING SOON
-                          </Badge>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Rarity */}
-                  <div className="text-center">
-                    <Badge 
-                      variant="secondary" 
-                      className="bg-fracture-grey/50 text-light-grey"
-                    >
-                      {archetype.rarity}
-                    </Badge>
-                  </div>
-
-                  {/* Name & Type */}
-                  <div className="space-y-1 text-center">
-                    <h3 className="font-display font-bold text-lg text-pure-white group-hover:text-light-grey transition-colors">
-                      {archetype.name}
-                    </h3>
-                    <p className="text-sm font-mono text-signal-grey">
-                      {archetype.type}
-                    </p>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-signal-grey text-sm leading-relaxed text-center">
-                    {archetype.description}
-                  </p>
-
-                  {/* Traits */}
-                  <div className="space-y-2">
-                    <div className="text-xs font-mono text-signal-grey uppercase tracking-wider text-center">
-                      Key Traits
-                    </div>
-                    <div className="flex flex-wrap gap-1 justify-center">
-                      {archetype.traits.map((trait) => (
-                        <span 
-                          key={trait}
-                          className="px-2 py-1 text-xs bg-fracture-grey/30 text-light-grey rounded font-mono"
-                        >
-                          {trait}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Hover Effect Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-light-grey/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
-                </CardContent>
-              </Card>
+                {trait}
+              </span>
             ))}
           </div>
+        </div>
+
+        {/* Hover Glow Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-light-grey/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none" />
+      </CardContent>
+    </Card>
+  ))}
+</div>
 
           {/* CTA */}
           <div className="text-center space-y-6">

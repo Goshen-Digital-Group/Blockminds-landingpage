@@ -16,44 +16,45 @@ const SocialsSection = () => {
       name: 'Discord',
       icon: MessageCircle,
       description: 'Join our community hub for real-time discussions and exclusive drops',
-      members: '15.2K',
+      members: '0',
       link: '#',
-      primary: true
+      primary: true,
     },
     {
       name: 'Twitter',
       icon: Twitter,
       description: 'Follow for latest updates, announcements, and community highlights',
-      members: '28.7K',
-      link: '#'
+      members: '0',
+       primary: true,
+      link: '#',
     },
     {
       name: 'Telegram',
       icon: Send,
       description: 'Get instant notifications about mint dates and important updates',
-      members: '9.3K',
-      link: '#'
+      members: '0',
+       primary: true,
+      link: '#',
     },
-    {
-      name: 'Instagram',
-      icon: Instagram,
-      description: 'Visual stories from the BLOCKMINDS universe and behind-the-scenes',
-      members: '12.1K',
-      link: '#'
-    },
-    {
-      name: 'YouTube',
-      icon: Youtube,
-      description: 'Documentaries, tutorials, and community showcases',
-      members: '5.8K',
-      link: '#'
-    }
+
+
   ];
 
   return (
-    <section className="py-24 relative" style={{ backgroundImage: 'url("/placeholder-bg.jpg")' }}>
+    <section id="community" className="py-24 relative" style={{ backgroundImage: 'url("/placeholder-bg.jpg")' }}>
       <div className="absolute inset-0 bg-gradient-void" />
       
+                      {/* Background Image with 50% Opacity */}
+<div 
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: 'url("/blockminds-assets/background/bg-7.png")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    opacity: 0.7,  // ← This applies only to the image layer
+  }}
+/>
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="space-y-16">
           {/* Section Header */}
@@ -62,7 +63,7 @@ const SocialsSection = () => {
               JOIN THE FRACTURE
             </Badge>
             <h2 className="font-display font-bold text-4xl md:text-6xl text-pure-white">
-              Community <span className="text-light-grey">Nexus</span>
+              Blockminds <span className="text-light-grey">Community </span>
             </h2>
             <p className="text-xl text-signal-grey max-w-3xl mx-auto leading-relaxed">
               Connect with fellow collectors, participate in governance, and help shape 
@@ -95,7 +96,9 @@ const SocialsSection = () => {
                           </h3>
                           <div className="flex items-center space-x-2 text-signal-grey">
                             <Users className="w-4 h-4" />
+                                   {/* disable  
                             <span className="font-mono text-sm">{platform.members}</span>
+                            */}
                           </div>
                         </div>
                       </div>
@@ -126,17 +129,18 @@ const SocialsSection = () => {
           </div>
 
           {/* Community Stats */}
+            {/* Community Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-pure-white font-display">71K+</div>
+              <div className="text-3xl font-bold text-pure-white font-display">0</div>
               <div className="text-sm text-signal-grey font-mono">TOTAL MEMBERS</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-light-grey font-display">24/7</div>
+              <div className="text-3xl font-bold text-light-grey font-display">0</div>
               <div className="text-sm text-signal-grey font-mono">ACTIVE COMMUNITY</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-pure-white font-display">150+</div>
+              <div className="text-3xl font-bold text-pure-white font-display">0</div>
               <div className="text-sm text-signal-grey font-mono">DAILY DISCUSSIONS</div>
             </div>
             <div className="text-center">
