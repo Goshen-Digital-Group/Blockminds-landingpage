@@ -113,7 +113,7 @@ const HeroSection = () => {
                 {/* Character Image */}
                 <div className="relative z-10 hover:bg-light-grey/10">
                   <img 
-                    src="/public/blockminds-assets/blockminds-logo-transparent.png"
+                    src="/blockminds-assets/blockminds-logo-transparent.png"
                     alt="The Fractured One - Genesis BLOCKMIND portrait"
                     className="w-full h-full object-contain"
                   />

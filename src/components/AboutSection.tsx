@@ -82,7 +82,14 @@ const AboutSection = () => {
             <Card className="border-light-grey/50 bg-card/50 backdrop-blur-sm hover:bg-light-grey/10">
               <CardContent className="p-6 space-y-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-core-purple to-fracture-grey rounded-lg flex items-center justify-center">
-                  <span className="text-xl font-display font-bold">🧠</span>
+                                <span className="flex items-center">
+                <img 
+                  src="blockminds-assets/sentinel-icon.png" 
+                  alt="Logo" 
+                  className="w-32 h-13 mr-2 items-center" // Adjust size and margin
+                />
+              
+              </span>
                 </div>
                 <h4 className="font-display font-bold text-xl">Sentient Shards</h4>
                 <p className="text-muted-foreground text-sm">
@@ -95,7 +102,11 @@ const AboutSection = () => {
             <Card className="border-light-grey/50 bg-card/50 backdrop-blur-sm hover:bg-light-grey/10">
               <CardContent className="p-6 space-y-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-cyber-cyan to-core-purple rounded-lg flex items-center justify-center">
-                  <span className="text-xl font-display font-bold">📖</span>
+               <img 
+                  src="blockminds-assets/Living-Narrative-icon.png" 
+                  alt="Logo" 
+                  className="w-32 h-13 mr-2 items-center" // Adjust size and margin
+                />
                 </div>
                 <h4 className="font-display font-bold text-xl">Living Narrative</h4>
                 <p className="text-muted-foreground text-sm">
@@ -108,7 +119,11 @@ const AboutSection = () => {
             <Card className="border-light-grey/50 bg-card/50 backdrop-blur-sm hover:bg-light-grey/10">
               <CardContent className="p-6 space-y-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-core-purple to-cyber-cyan rounded-lg flex items-center justify-center">
-                  <span className="text-xl font-display font-bold">🔮</span>
+                   <img 
+                  src="blockminds-assets/Narrative-Authority-icon.png" 
+                  alt="Logo" 
+                  className="w-32 h-13 mr-2 items-center" // Adjust size and margin
+                />
                 </div>
                 <h4 className="font-display font-bold text-xl">Narrative Authority</h4>
                 <p className="text-muted-foreground text-sm">
