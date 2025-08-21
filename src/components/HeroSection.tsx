@@ -87,7 +87,7 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Stats */}
+              {/* Stats 
               <div className="grid grid-cols-3 gap-6 pt-8">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-pure-white">10,000</div>
@@ -102,7 +102,9 @@ const HeroSection = () => {
                   <div className="text-sm text-signal-grey font-mono">STORIES</div>
                 </div>
               </div>
+              */}
             </div>
+            
 
             {/* Hero Image - The Fractured One */}
             <div className="relative ">

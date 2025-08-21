@@ -5,8 +5,6 @@ import {
   MessageCircle, 
   Send, 
   Twitter, 
-  Instagram, 
-  Youtube,
   Users
 } from 'lucide-react';
 
@@ -17,7 +15,7 @@ const SocialsSection = () => {
       icon: MessageCircle,
       description: 'Join our community hub for real-time discussions and exclusive drops',
       members: '7',
-      link: 'https://mee6.xyz/i/37plYwmYJY',
+      url: 'https://mee6.xyz/i/37plYwmYJY',
       primary: true,
     },
     {
@@ -25,35 +23,32 @@ const SocialsSection = () => {
       icon: Twitter,
       description: 'Follow for latest updates, announcements, and community highlights',
       members: '0',
-       primary: true,
-      link: 'https://x.com/theblckmnds',
+      url: 'https://x.com/theblckmnds',
+      primary: true,
     },
     {
       name: 'Telegram',
       icon: Send,
       description: 'Get instant notifications about mint dates and important updates',
       members: '0',
-       primary: true,
-      link: '#',
+      url: '#',
+      primary: true,
     },
-
-
   ];
 
   return (
-    <section id="community" className="py-24 relative" style={{ backgroundImage: 'url("/placeholder-bg.jpg")' }}>
-      <div className="absolute inset-0 bg-gradient-void" />
-      
-                      {/* Background Image with 50% Opacity */}
-<div 
-  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage: 'url("/blockminds-assets/background/bg-7.png")',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    opacity: 0.7,  // ← This applies only to the image layer
-  }}
-/>
+    <section id="community" className="py-24 relative">
+      {/* Background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url("/blockminds-assets/background/bg-7.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.7,
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-void-black/80 to-deep-charcoal/90" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="space-y-16">
@@ -63,7 +58,7 @@ const SocialsSection = () => {
               JOIN THE FRACTURE
             </Badge>
             <h2 className="font-display font-bold text-4xl md:text-6xl text-pure-white">
-              Blockminds <span className="text-light-grey">Community </span>
+              Blockminds <span className="text-light-grey">Community</span>
             </h2>
             <p className="text-xl text-signal-grey max-w-3xl mx-auto leading-relaxed">
               Connect with fellow collectors, participate in governance, and help shape 
@@ -78,12 +73,11 @@ const SocialsSection = () => {
               return (
                 <Card 
                   key={platform.name}
-                  className={`bg-deep-charcoal/50 border-fracture-grey/30 backdrop-blur-sm hover:border-light-grey/50 transition-all duration-300 group cursor-pointer ${
+                  className={`bg-deep-charcoal/50 border border-fracture-grey/30 backdrop-blur-sm hover:border-light-grey/50 transition-all duration-300 group cursor-pointer ${
                     platform.primary ? 'md:col-span-2 lg:col-span-1' : ''
                   }`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <CardContent className="p-8 space-y-6">
+                  <CardContent className="p-8 space-y-6 relative">
                     {/* Platform Header */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
@@ -96,9 +90,7 @@ const SocialsSection = () => {
                           </h3>
                           <div className="flex items-center space-x-2 text-signal-grey">
                             <Users className="w-4 h-4" />
-                                   {/* disable  
-                            <span className="font-mono text-sm">{platform.members}</span>
-                            */}
+                            {/* Hidden: <span className="font-mono text-sm">{platform.members}</span> */}
                           </div>
                         </div>
                       </div>
@@ -110,18 +102,34 @@ const SocialsSection = () => {
                     </p>
 
                     {/* Join Button */}
-                    <Button 
-                      className={`w-full ${
-                        platform.primary 
-                          ? 'bg-gradient-light text-void-black hover:shadow-glow-white' 
-                          : 'bg-fracture-grey/50 text-pure-white hover:bg-light-grey/20'
-                      } font-semibold transition-all duration-300`}
-                    >
-                      {platform.primary ? 'Join Discord' : `Follow on ${platform.name}`}
+                <Button
+              className={`w-full min-h-12 py-3 px-6 flex items-center justify-center gap-2 text-sm font-medium
+                ${platform.primary
+                  ? 'bg-gradient-light text-void-black hover:shadow-glow-white'
+                  : 'bg-fracture-grey/50 text-pure-white hover:bg-light-grey/20'
+                } 
+                transition-all duration-300 rounded-lg`}
+              onClick={() => window.open(platform.url, '_blank')}
+>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                      </svg>
+                      {platform.primary ? 'Link' : `Follow on ${platform.name}`}
                     </Button>
 
-                    {/* Hover Effect Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-light-grey/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-light-grey/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none" />
                   </CardContent>
                 </Card>
               );
@@ -129,7 +137,6 @@ const SocialsSection = () => {
           </div>
 
           {/* Community Stats */}
-            {/* Community Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-pure-white font-display">7</div>

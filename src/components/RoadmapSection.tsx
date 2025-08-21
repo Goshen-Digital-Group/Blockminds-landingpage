@@ -129,98 +129,136 @@ const RoadmapSection = () => {
             
             <div className="space-y-16">
               {roadmapPhases.map((phase, index) => (
-                <div key={phase.phase} className="relative">
-                  {/* Timeline Node */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-2 border-cyber-cyan bg-deep-charcoal z-10">
-                    <div className={`w-2 h-2 rounded-full mx-auto mt-1 ${
-                      phase.status === 'active' 
-                        ? 'bg-cyber-cyan animate-pulse' 
-                        : phase.status === 'upcoming' 
-                          ? 'bg-core-purple' 
-                          : 'bg-signal-grey'
-                    }`} />
+  <div key={phase.phase} className="relative">
+    {/* Timeline Node */}
+    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-2 border-cyber-cyan bg-deep-charcoal z-10">
+      <div
+        className={`w-2 h-2 rounded-full mx-auto mt-1 ${
+          phase.status === 'active'
+            ? 'bg-cyber-cyan animate-pulse'
+            : phase.status === 'upcoming'
+            ? 'bg-core-purple'
+            : 'bg-signal-grey'
+        }`}
+      />
+    </div>
+
+    {/* Content & Visual */}
+    <div className="grid md:grid-cols-2 gap-8 items-center">
+      {/* Text Content */}
+      <div
+        className={`space-y-4 ${
+          index % 2 === 0
+            ? 'md:pr-16 text-left' // Left side: padding right, left-aligned
+            : 'md:pl-16 md:order-2 text-right' // Right side: padding left, right-aligned, reorder
+        }`}
+      >
+        <div className="space-y-2">
+          <div
+            className={`flex items-center gap-3 ${
+              index % 2 === 1 ? 'justify-end' : 'justify-start'
+            }`}
+          >
+            <span className="font-display font-black text-3xl text-cyber-cyan">
+              {phase.phase}
+            </span>
+            <Badge
+              variant="secondary"
+              className={`${
+                phase.status === 'active'
+                  ? 'bg-cyber-cyan/20 text-cyber-cyan'
+                  : phase.status === 'upcoming'
+                  ? 'bg-core-purple/20 text-core-purple'
+                  : 'bg-signal-grey/20 text-signal-grey'
+              }`}
+            >
+              {phase.status}
+            </Badge>
+          </div>
+          <h3 className="font-display font-bold text-3xl">{phase.title}</h3>
+          <p className="text-lg text-muted-foreground font-mono">{phase.subtitle}</p>
+        </div>
+
+        {/* Fixed List: Align text with title on left, right-align on right */}
+        <ul className="space-y-2">
+          {phase.items.map((item, itemIndex) => (
+            <li
+              key={itemIndex}
+              className={`flex items-start gap-3 text-muted-foreground relative ${
+                index % 2 === 1 ? 'justify-end' : ''
+              }`}
+            >
+              {/* Bullet: Positioned outside text flow */}
+              <div
+                className="w-1.5 h-1.5 bg-cyber-cyan rounded-full mt-2 flex-shrink-0 absolute"
+                style={{
+                  [index % 2 === 1 ? 'right' : 'left']: 0,
+                  top: '0.6rem',
+                }}
+              />
+              {/* Text starts where title starts */}
+              <span
+                style={{
+                  marginLeft: index % 2 === 1 ? undefined : '1.25rem',
+                  marginRight: index % 2 === 1 ? '1.25rem' : undefined,
+                }}
+                className="flex-1"
+              >
+                {item}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Visual Card */}
+      <div
+        className={`${
+          index % 2 === 0 ? 'md:pl-16' : 'md:pr-16'
+        } ${
+          index % 2 === 1 ? 'md:order-1' : ''
+        }`}
+      >
+        <Card className="border-white/20 bg-card/30 backdrop-blur-sm hover:bg-light-grey/10">
+          <CardContent className="p-8">
+            <div className="aspect-square relative">
+              {/* Background Gradient */}
+              <div className="absolute inset-0 bg-gradient-fracture rounded-lg opacity-50" />
+
+              {/* Image or Fallback */}
+              <div className="absolute inset-4 border border-cyber-cyan/30 rounded-lg overflow-hidden">
+                {phase.image ? (
+                  <img
+                    src={phase.image}
+                    alt={phase.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <span className="font-display font-black text-6xl text-cyber-cyan/70">
+                      {phase.phase}
+                    </span>
                   </div>
+                )}
+              </div>
 
-                  {/* Content & Visual */}
-                  <div className={`grid md:grid-cols-2 gap-8 items-center ${
-                    index % 2 === 0 ? '' : 'md:text-right'
-                  }`}>
-                    {/* Text Content */}
-                    <div className={`space-y-4 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16 md:order-2'}`}>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-3">
-                          <span className="font-display font-black text-3xl text-cyber-cyan">
-                            {phase.phase}
-                          </span>
-                          <Badge 
-                            variant="secondary" 
-                            className={`${
-                              phase.status === 'active' 
-                                ? 'bg-cyber-cyan/20 text-cyber-cyan' :
-                                phase.status === 'upcoming' 
-                                  ? 'bg-core-purple/20 text-core-purple' :
-                                  'bg-signal-grey/20 text-signal-grey'
-                            }`}
-                          >
-                            {phase.status}
-                          </Badge>
-                        </div>
-                        <h3 className="font-display font-bold text-2xl">{phase.title}</h3>
-                        <p className="text-lg text-muted-foreground font-mono">{phase.subtitle}</p>
-                      </div>
-
-                      <ul className="space-y-2">
-                        {phase.items.map((item, itemIndex) => (
-                          <li key={itemIndex} className="flex items-start gap-3 text-muted-foreground">
-                            <div className="w-1.5 h-1.5 bg-cyber-cyan rounded-full mt-2 flex-shrink-0" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Visual Card */}
-                    <div className={`${index % 2 === 0 ? 'md:pl-16' : 'md:pr-16 md:order-1'}`}>
-                      <Card className="border-white/20 bg-card/30 backdrop-blur-sm hover:bg-light-grey/10">
-                        <CardContent className="p-8">
-                          <div className="aspect-square relative">
-                            {/* Background Gradient (fallback layer) */}
-                            <div className="absolute inset-0 bg-gradient-fracture rounded-lg opacity-50" />
-
-                            {/* Image or Fallback Number */}
-                            <div className="absolute inset-4 border border-cyber-cyan/30 rounded-lg overflow-hidden">
-                              {phase.image ? (
-                                <img 
-                                  src={phase.image}
-                                  alt={phase.title}
-                                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                                />
-                              ) : (
-                                <div className="w-full h-full flex items-center justify-center">
-                                  <span className="font-display font-black text-6xl text-cyber-cyan/70">
-                                    {phase.phase}
-                                  </span>
-                                </div>
-                              )}
-                            </div>
-                            
-                            {/* Glow Effect */}
-                            <div 
-                              className={`absolute inset-0 rounded-lg blur-xl opacity-20 ${
-                                phase.status === 'active' 
-                                  ? 'bg-white' 
-                                  : phase.status === 'upcoming' 
-                                    ? 'bg-slate-500' 
-                                    : 'bg-signal-grey'
-                              }`}
-                            />
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </div>
-                </div>
-              ))}
+              {/* Glow Effect */}
+              <div
+                className={`absolute inset-0 rounded-lg blur-xl opacity-20 ${
+                  phase.status === 'active'
+                    ? 'bg-white'
+                    : phase.status === 'upcoming'
+                    ? 'bg-slate-500'
+                    : 'bg-signal-grey'
+                }`}
+              />
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </div>
+))}
             </div>
           </div>
 
