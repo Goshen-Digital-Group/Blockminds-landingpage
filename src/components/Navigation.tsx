@@ -59,7 +59,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img
-              src="/lovable-uploads/4fd5c5b8-2b7b-4928-8047-fadafe5a1b48.png"
+              src="/blockminds-assets/blockminds-logo-transparent.png"
               alt="BLOCKMINDS Logo"
               className="w-8 h-8 mr-3"
             />
