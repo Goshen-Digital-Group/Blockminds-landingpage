@@ -3,43 +3,43 @@ import { Badge } from '@/components/ui/badge';
 
 const teamMembers = [
   {
-    name: "Nexa Core",
-    role: "Lead Architect",
-    identity: "Neural Weaver",
+    name: "0xteksage",
+    role: "Head of Tech / Co-Founder",
+    identity: "Blockchain Engineer",
     avatar: "/blockminds-assets/blockminds-logo-transparent.png",
     traits: ["Code Fracturing", "Lore Sync", "Mind Meld"]
   },
   {
-    name: "Voxel Cipher",
-    role: "Creative Director",
-    identity: "Aesthetic Hacker",
+    name: "AgustD",
+    role: "Creative Director / Co-Founder",
+    identity: "Narrative Designer",
     avatar: "/blockminds-assets/blockminds-logo-transparent.png",
     traits: ["Visual Static", "Echo Design", "Glitch Alchemy"]
   },
   {
     name: "Drift Sync",
-    role: "Blockchain Engineer",
+    role: "Blockchain Engineer / Co-Founder",
     identity: "Chain Whisperer",
     avatar: "/blockminds-assets/blockminds-logo-transparent.png",
     traits: ["Smart Contract Weaving", "Token Pulse", "Decentralized Memory"]
   },
   {
-    name: "Lyra Flux",
-    role: "Narrative Designer",
+    name: "Naut",
+    role: "Narrative Designer / Co-Founder",
     identity: "Truth Fragmenter",
     avatar: "/blockminds-assets/blockminds-logo-transparent.png",
     traits: ["Myth Engineering", "Shard Lore", "Memory Echo"]
   },
   {
-    name: "Kairo Mind",
-    role: "Community Oracle",
+    name: "Golden Kio",
+    role: "Community Oracle / Co-Founder",
     identity: "Signal Seer",
     avatar: "/blockminds-assets/blockminds-logo-transparent.png",
     traits: ["Discord Pulse", "Holder Sync", "Lore Keeper"]
   },
   {
     name: "Zyntra Loop",
-    role: "Audio Architect",
+    role: "Audio Architect / Co-Founder",
     identity: "Sonic Fracture",
     avatar: "/blockminds-assets/blockminds-logo-transparent.png",
     traits: ["Ambient Noise", "Neural Beats", "Echo Frequency"]

@@ -16,8 +16,8 @@ const SocialsSection = () => {
       name: 'Discord',
       icon: MessageCircle,
       description: 'Join our community hub for real-time discussions and exclusive drops',
-      members: '0',
-      link: '#',
+      members: '7',
+      link: 'https://mee6.xyz/i/37plYwmYJY',
       primary: true,
     },
     {
@@ -26,7 +26,7 @@ const SocialsSection = () => {
       description: 'Follow for latest updates, announcements, and community highlights',
       members: '0',
        primary: true,
-      link: '#',
+      link: 'https://x.com/theblckmnds',
     },
     {
       name: 'Telegram',
@@ -132,7 +132,7 @@ const SocialsSection = () => {
             {/* Community Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-pure-white font-display">0</div>
+              <div className="text-3xl font-bold text-pure-white font-display">7</div>
               <div className="text-sm text-signal-grey font-mono">TOTAL MEMBERS</div>
             </div>
             <div className="text-center">

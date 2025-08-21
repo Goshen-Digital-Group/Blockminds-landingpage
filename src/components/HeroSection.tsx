@@ -58,7 +58,7 @@ const HeroSection = () => {
                 
                 <h1 className="font-display font-black text-5xl md:text-7xl lg:text-8xl leading-tight">
                   <span className="text-pure-white">BLOCK</span>
-                  <span className="text-light-grey">MINDS</span>
+                  <span className="text-light-grey"> MINDS</span>
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-signal-grey">
