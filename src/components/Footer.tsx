@@ -38,8 +38,8 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-display font-bold text-lg">Community</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-muted-foreground hover:text-cyber-cyan transition-colors">Discord</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-cyber-cyan transition-colors">Twitter</a></li>
+              <li><a href="https://mee6.xyz/i/37plYwmYJY" className="text-muted-foreground hover:text-cyber-cyan transition-colors">Discord</a></li>
+              <li><a href="https://x.com/theblckmnds" className="text-muted-foreground hover:text-cyber-cyan transition-colors">Twitter</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-cyber-cyan transition-colors">OpenSea</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-cyber-cyan transition-colors">Magic Eden</a></li>
             </ul>
@@ -65,7 +65,7 @@ const Footer = () => {
         <div className="pt-8 mt-8 border-t border-fracture-grey/30">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-muted-foreground">
-              © 2024 BLOCKMINDS. All rights reserved.
+              © 2025 BLOCKMINDS. All rights reserved.
             </div>
             
           </div>
