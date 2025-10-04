@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Monitor } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,10 +18,10 @@ const Navigation = () => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#About' },
-    // { name: 'Archetypes', href: '#archetypes' },
     { name: 'Roadmap', href: '#roadmap' },
     { name: 'Team', href: '#teams' },
-    { name: 'Community', href: '#community' }
+    { name: 'Community', href: '#community' },
+    { name: 'BLCKMNDSApp', href: 'https://app.theblockminds.com' },
   ];
 
   // Unified scroll handler
@@ -40,6 +40,10 @@ const Navigation = () => {
       });
     } else {
       console.warn(`Element #${targetId} not found in DOM`);
+      // Fallback for external links
+      if (targetId.startsWith('https://')) {
+        window.open(targetId, '_blank');
+      }
     }
 
     // Close mobile menu after navigation
@@ -54,7 +58,7 @@ const Navigation = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 " >
+      <div className="container mx-auto px-4 ">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
@@ -83,18 +87,18 @@ const Navigation = () => {
           </div>
 
           {/* Buy Button - Desktop */}
-         <div className="hidden md:block">
-        <Button
-          size="sm"
-          className="bg-gradient-light text-void-black hover:shadow-glow-white gap-11 font-semibold"
-          onClick={(e) => {
-            e.preventDefault();
-            window.open('https://example.com/buy', '_blank');
-          }}
-        >
-          <span className="tracking-widest">JOIN DISCORD</span>
-        </Button>
-      </div>
+          <div className="hidden md:block">
+            <Button
+              size="sm"
+              className="bg-gradient-light text-void-black hover:shadow-glow-white gap-11 font-semibold"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open('https://mee6.xyz/i/37plYwmYJY', '_blank');
+              }}
+            >
+              <span className="tracking-widest">JOIN DISCORD</span>
+            </Button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button

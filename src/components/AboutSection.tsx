@@ -3,7 +3,7 @@ import { Badge } from '@/components/ui/badge';
 
 const AboutSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden"  id="About"  >
+    <section className="py-24 relative overflow-hidden" id="About">
       {/* Base Gradient Background */}
       <div className="absolute inset-0 bg-gradient-void" />
 
@@ -25,21 +25,19 @@ const AboutSection = () => {
       {/* Background Particle Effects */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyber-cyan to-transparent" />
 
-{/* Background Image with 50% Opacity */}
-<div 
-  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage: 'url("/blockminds-assets/background/bg-1.png")',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    opacity: 0.7,  // ← This applies only to the image layer
-  }}
-/>
+      {/* Background Image with 50% Opacity */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url("/blockminds-assets/background/bg-1.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.7,
+        }}
+      />
 
-          {/* Grid Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_60%,transparent_100%)]" />
-
-      
+      {/* Grid Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_60%,transparent_100%)]" />
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
@@ -82,14 +80,13 @@ const AboutSection = () => {
             <Card className="border-light-grey/50 bg-card/50 backdrop-blur-sm hover:bg-light-grey/10">
               <CardContent className="p-6 space-y-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-core-purple to-fracture-grey rounded-lg flex items-center justify-center">
-                                <span className="flex items-center">
-                <img 
-                  src="blockminds-assets/sentinel-icon.png" 
-                  alt="Logo" 
-                  className="w-32 h-13 mr-2 items-center" // Adjust size and margin
-                />
-              
-              </span>
+                  <span className="flex items-center">
+                    <img 
+                      src="blockminds-assets/sentinel-icon.png" 
+                      alt="Logo" 
+                      className="w-32 h-13 mr-2 items-center" // Adjust size and margin
+                    />
+                  </span>
                 </div>
                 <h4 className="font-display font-bold text-xl">Sentient Shards</h4>
                 <p className="text-muted-foreground text-sm">
@@ -102,11 +99,11 @@ const AboutSection = () => {
             <Card className="border-light-grey/50 bg-card/50 backdrop-blur-sm hover:bg-light-grey/10">
               <CardContent className="p-6 space-y-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-cyber-cyan to-core-purple rounded-lg flex items-center justify-center">
-               <img 
-                  src="blockminds-assets/Living-Narrative-icon.png" 
-                  alt="Logo" 
-                  className="w-32 h-13 mr-2 items-center" // Adjust size and margin
-                />
+                  <img 
+                    src="blockminds-assets/Living-Narrative-icon.png" 
+                    alt="Logo" 
+                    className="w-32 h-13 mr-2 items-center" // Adjust size and margin
+                  />
                 </div>
                 <h4 className="font-display font-bold text-xl">Living Narrative</h4>
                 <p className="text-muted-foreground text-sm">
@@ -119,11 +116,11 @@ const AboutSection = () => {
             <Card className="border-light-grey/50 bg-card/50 backdrop-blur-sm hover:bg-light-grey/10">
               <CardContent className="p-6 space-y-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-core-purple to-cyber-cyan rounded-lg flex items-center justify-center">
-                   <img 
-                  src="blockminds-assets/Narrative-Authority-icon.png" 
-                  alt="Logo" 
-                  className="w-32 h-13 mr-2 items-center" // Adjust size and margin
-                />
+                  <img 
+                    src="blockminds-assets/Narrative-Authority-icon.png" 
+                    alt="Logo" 
+                    className="w-32 h-13 mr-2 items-center" // Adjust size and margin
+                  />
                 </div>
                 <h4 className="font-display font-bold text-xl">Narrative Authority</h4>
                 <p className="text-muted-foreground text-sm">
@@ -135,63 +132,63 @@ const AboutSection = () => {
           </div>
 
           {/* The Fractured One Spotlight */}
-         <Card className="border-light-grey/50 bg-gradient-subtle backdrop-blur-sm">
-  <CardContent className="p-6 md:p-8">
-    <div className="grid md:grid-cols-2 gap-8 items-center">
-      {/* Text Content */}
-      <div className="space-y-4 text-center md:text-left">
-        <div className="flex justify-center md:justify-start items-center gap-3">
-          <div className="w-3 h-3 bg-cyber-cyan rounded-full animate-pulse" />
-          <h3 className="font-display font-extrabold text-4xl md:text-6xl">BLCKMNDS</h3>
-        </div>
-        <p className="text-muted-foreground leading-relaxed text-slate-100">
-          At the center is BLCKMNDS the first shard to aware itself. 
-          It is both prophet and puzzle, carrying the heaviest shards of truth yet 
-          seeing nothing whole. It walks the border between revelation and madness.
-        </p>
-        <div className="flex flex-wrap justify-center md:justify-start gap-4">
-          <Badge variant="secondary" className="bg-white/40 text-cyber-cyan">
-            BLCKMNDS
-          </Badge>
-          <Badge variant="secondary" className="bg-white/40 text-cyber-cyan">
-            Genesis
-          </Badge>
-        </div>
-      </div>
+          <Card className="border-light-grey/50 bg-gradient-subtle backdrop-blur-sm">
+            <CardContent className="p-6 md:p-8">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Text Content */}
+                <div className="space-y-4 text-center md:text-left">
+                  <div className="flex justify-center md:justify-start items-center gap-3">
+                    <div className="w-3 h-3 bg-cyber-cyan rounded-full animate-pulse" />
+                    <h3 className="font-display font-extrabold text-4xl md:text-6xl">BLCKMNDS</h3>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed text-slate-100">
+                    At the center is BLCKMNDS the first shard to aware itself. 
+                    It is both prophet and puzzle, carrying the heaviest shards of truth yet 
+                    seeing nothing whole. It walks the border between revelation and madness.
+                  </p>
+                  <div className="flex flex-wrap justify-center md:justify-start gap-4">
+                    <Badge variant="secondary" className="bg-white/40 text-cyber-cyan">
+                      BLCKMNDS
+                    </Badge>
+                    <Badge variant="secondary" className="bg-white/40 text-cyber-cyan">
+                      Genesis
+                    </Badge>
+                  </div>
+                </div>
 
-      {/* Image Container — Fully Responsive Clipping */}
-      <div className="relative flex justify-center">
-        {/* 👇 Responsive height: smaller on mobile, full on desktop */}
-        <div 
-          className="w-full max-w-[400px] h-[300px] md:h-[400px] overflow-hidden rounded-lg relative"
-          style={{ 
-            background: 'transparent',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <div 
-            className="inline-block"
-            style={{
-              transform: 'scale(0.8) translateX(-10px)',
-              transformOrigin: 'center',
-            }}
-          >
-            <img
-              src="/blockminds-assets/fractured-nft-1.png"
-              alt="BLOCKMINDS Cube Symbol"
-              className="max-w-none max-h-none object-contain"
-            />
-          </div>
-        </div>
+                {/* Image Container — Fully Responsive Clipping */}
+                <div className="relative flex justify-center">
+                  {/* 👇 Responsive height: smaller on mobile, full on desktop */}
+                  <div 
+                    className="w-full max-w-[400px] h-[300px] md:h-[400px] overflow-hidden rounded-lg relative"
+                    style={{ 
+                      background: 'transparent',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <div 
+                      className="inline-block"
+                      style={{
+                        transform: 'scale(0.8) translateX(-10px)',
+                        transformOrigin: 'center',
+                      }}
+                    >
+                      <img
+                        src="/blockminds-assets/fractured-nft-1.png"
+                        alt="BLOCKMINDS Cube Symbol"
+                        className="max-w-none max-h-none object-contain"
+                      />
+                    </div>
+                  </div>
 
-        {/* Optional: subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyber-cyan/10 to-transparent pointer-events-none" />
-      </div>
-    </div>
-  </CardContent>
-</Card>
+                  {/* Optional: subtle gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyber-cyan/10 to-transparent pointer-events-none" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

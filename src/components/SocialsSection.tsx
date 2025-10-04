@@ -36,14 +36,7 @@ const SocialsSection = () => {
       link: 'https://github.com/Goshen-Digital-Group/blockminds-strategy',
       primary: true,
     },
-    {
-      name: 'Blockminds App',
-      icon: Monitor,
-      description: 'Launch the official BLOCKMINDS dApp to interact with the universe.',
-      members: 'N/A',
-      link: 'https://app.theblockminds.com',
-      primary: true,
-    },
+
   ];
 
   return (
