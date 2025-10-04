@@ -75,19 +75,19 @@ const HeroSection = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="bg-gradient-light text-void-black hover:shadow-glow-white font-semibold">
-                    EXPLORE SHARDS
+                   BUY $MNDS
                   </Button>
-                  <Button 
+                  {/* <Button 
                     variant="outline" 
                     size="lg" 
                     className="border-light-grey/50 text-light-grey hover:bg-light-grey/10"
                   >
                     VIEW COLLECTION
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
 
-              {/* Stats */}
+              {/* Stats
               <div className="grid grid-cols-3 gap-6 pt-8">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-pure-white">10,000</div>
@@ -101,7 +101,7 @@ const HeroSection = () => {
                   <div className="text-2xl font-bold text-pure-white">∞</div>
                   <div className="text-sm text-signal-grey font-mono">STORIES</div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Hero Image - The Fractured One */}

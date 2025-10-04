@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
-import ArchetypesSection from '@/components/ArchetypesSection';
+// import ArchetypesSection from '@/components/ArchetypesSection';
 import OfficialLaunchSection from '@/components/OfficialLaunchSection';
 import SocialsSection from '@/components/SocialsSection';
 import RoadmapSection from '@/components/RoadmapSection';
@@ -21,7 +21,7 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <AboutSection />
-      <ArchetypesSection />
+      {/* <ArchetypesSection /> */}
       <RoadmapSection />
       <TeamSection />
       <OfficialLaunchSection />

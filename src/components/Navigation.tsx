@@ -18,7 +18,6 @@ const Navigation = () => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#About' },
-    { name: 'Archetypes', href: '#archetypes' },
     { name: 'Roadmap', href: '#roadmap' },
     { name: 'Team', href: '#teams' },
     { name: 'Community', href: '#community' }
@@ -48,7 +47,7 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 pt-2 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-void-black/95 backdrop-blur-md border-b border-fracture-grey/30'
           : 'bg-transparent'
@@ -83,18 +82,19 @@ const Navigation = () => {
           </div>
 
           {/* Buy Button - Desktop */}
-          <div className="hidden md:block">
-            <Button
-              size="sm"
-              className="bg-gradient-light text-void-black hover:shadow-glow-white font-semibold"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open('https://example.com/buy', '_blank');
-              }}
-            >
-              BUY NOW
-            </Button>
-          </div>
+ <div className="flex flex-col sm:flex-row gap-4">
+  <Button
+    size=""
+    className="bg-gradient-light text-void-black hover:shadow-glow-white font-semibold"
+    onClick={(e) => {
+      e.preventDefault();
+      // NOTE: Using a placeholder URL for the Discord link
+      window.open('https://example.com/join-discord', '_blank');
+    }}
+  >
+    <span className="tracking-[.1em]">JOIN DISCORD</span>
+  </Button>
+</div>
 
           {/* Mobile Menu Button */}
           <button
