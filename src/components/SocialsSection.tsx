@@ -5,7 +5,9 @@ import {
   MessageCircle,
   Send,
   Twitter,
-  Users
+  Users,
+  Github,
+  Monitor,
 } from 'lucide-react';
 
 const SocialsSection = () => {
@@ -23,8 +25,24 @@ const SocialsSection = () => {
       icon: Twitter,
       description: 'Follow for latest updates, announcements.',
       members: '0',
-      primary: true,
       link: 'https://x.com/theblckmnds',
+      primary: true,
+    },
+    {
+      name: 'GitHub',
+      icon: Github,
+      description: 'Explore our open-source code and contribute to the project.',
+      members: '0',
+      link: 'https://github.com/Goshen-Digital-Group/blockminds-strategy',
+      primary: true,
+    },
+    {
+      name: 'Blockminds App',
+      icon: Monitor,
+      description: 'Launch the official BLOCKMINDS dApp to interact with the universe.',
+      members: 'N/A',
+      link: 'https://app.theblockminds.com',
+      primary: true,
     },
   ];
 
@@ -76,9 +94,10 @@ const SocialsSection = () => {
                           <h3 className="font-display font-bold text-xl text-pure-white group-hover:text-light-grey transition-colors">
                             {platform.name}
                           </h3>
-                          <div className="flex items-center space-x-2 text-signal-grey">
+                          {/* <div className="flex items-center space-x-2 text-signal-grey">
                             <Users className="w-4 h-4" />
-                          </div>
+                            <p className="text-sm">{platform.members} Members</p>
+                          </div> */}
                         </div>
                       </div>
 
@@ -98,7 +117,7 @@ const SocialsSection = () => {
                             : 'bg-fracture-grey/50 text-pure-white hover:bg-light-grey/20'
                         }`}
                       >
-                        {platform.name === 'Discord' ? 'Join Discord' : `Follow on ${platform.name}`}
+                        {platform.name === 'Discord' ? 'Join Discord' : `Open ${platform.name}`}
                       </a>
                     </Button>
 
