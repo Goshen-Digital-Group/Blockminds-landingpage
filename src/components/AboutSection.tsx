@@ -136,41 +136,63 @@ const AboutSection = () => {
 
           {/* The Fractured One Spotlight */}
           <Card className="border-light-grey/50 bg-gradient-subtle backdrop-blur-sm">
-            <CardContent className="p-8">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-cyber-cyan rounded-full animate-pulse" />
-                    <h3 className="font-display font-bold text-2xl ">BLCKMNDS</h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    At the center is The Fractured One the first shard to aware itself. 
-                    It is both prophet and puzzle, carrying the heaviest shards of truth yet 
-                    seeing nothing whole. It walks the border between revelation and madness.
-                  </p>
-                  <Badge variant="secondary" className="bg-cyber-cyan/20 text-cyber-cyan">
-                    Genesis Prophet
-                  </Badge>
-                </div>
-                <div className="relative">
-                  <div className="w-52 h-52 mx-auto bg-gradient-fracture rounded-full flex items-center justify-center">
-  <img 
-    src="/blockminds-assets/MAIN-1.png"
-    alt="BLOCKMINDS Cube Symbol"
-    className="
-      w-52 h-52 md:w-52 md:h-52
-      max-w-none max-h-none
-      object-contain
-      animate-float
-      block
-    "
-    style={{ width: '220px', height: '220px' }}
-  />
+  <CardContent className="p-8">
+  <div className="grid md:grid-cols-2 gap-8 items-center">
+    {/* Text Content */}
+   <div className="space-y-4">
+    <div className="flex items-center gap-3">
+        <div className="w-3 h-3 bg-cyber-cyan rounded-full animate-pulse" />
+        <h3 className="font-display font-extrabold text-left text-6xl">BLCKMNDS</h3>
+    </div>
+    <p className="text-muted-foreground leading-relaxed text-left">
+        At the center is The Fractured One the first shard to aware itself. 
+        It is both prophet and puzzle, carrying the heaviest shards of truth yet 
+        seeing nothing whole. It walks the border between revelation and madness.
+    </p>
+    <div className="flex flex-wrap gap-4">
+        <Badge variant="secondary" className="bg-white/40  text-cyber-cyan">
+            BLCKMNDS
+        </Badge>
+        <Badge variant="secondary" className="bg-white/40  text-cyber-cyan">
+            Genesis
+        </Badge>
+    </div>
 </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyber-cyan/20 to-transparent rounded-full blur-xl" />
-                </div>
-              </div>
-            </CardContent>
+
+    {/* Image Container — Clipping Frame */}
+    <div className="relative flex justify-center">
+      {/* 👇 CLIPPING CONTAINER — defines visible area, fixed height */}
+      <div 
+        className="w-full md:w-auto h-[400px] overflow-hidden rounded-lg relative"
+        style={{ 
+          background: 'transparent',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {/* 👇 AUTO-SIZED WRAPPER — lets image expand freely */}
+        <div 
+          className="inline-block"
+          style={{
+            transform: 'scale(.8) translateX(-10px)', // 🔥 Adjust scale & position here
+            transformOrigin: 'center',
+        
+          }}
+        >
+          <img
+            src="/blockminds-assets/fractured-nft-1.png"
+            alt="BLOCKMINDS Cube Symbol"
+            className="max-w-none max-h-none object-contain"
+          />
+        </div>
+      </div>
+
+      {/* Optional: subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyber-cyan/10 to-transparent pointer-events-none" />
+    </div>
+  </div>
+</CardContent>
           </Card>
         </div>
       </div>
