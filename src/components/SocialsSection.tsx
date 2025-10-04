@@ -5,8 +5,6 @@ import {
   MessageCircle,
   Send,
   Twitter,
-  Instagram,
-  Youtube,
   Users
 } from 'lucide-react';
 
@@ -23,18 +21,10 @@ const SocialsSection = () => {
     {
       name: 'Twitter',
       icon: Twitter,
-      description: 'Follow for latest updates, announcements, and community highlights',
+      description: 'Follow for latest updates, announcements.',
       members: '0',
       primary: true,
       link: 'https://x.com/theblckmnds',
-    },
-    {
-      name: 'Telegram',
-      icon: Send,
-      description: 'Get instant notifications about mint dates and important updates',
-      members: '0',
-      primary: true,
-      link: '#',
     },
   ];
 
@@ -67,19 +57,16 @@ const SocialsSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {socialPlatforms.map((platform, index) => {
               const IconComponent = platform.icon;
               return (
                 <Card
                   key={platform.name}
-                  className={`bg-deep-charcoal/50 border-fracture-grey/30 backdrop-blur-sm hover:border-light-grey/50 transition-all duration-300 group cursor-pointer ${
-                    platform.primary ? 'md:col-span-2 lg:col-span-1' : ''
-                  }`}
+                  className={`bg-deep-charcoal/50 border-fracture-grey/30 backdrop-blur-sm hover:border-light-grey/50 transition-all duration-300 group cursor-pointer w-full md:w-1/2 lg:w-1/3 max-w-sm`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardContent className="p-8 space-y-6 relative">
-                    {/* Make sure content is above the overlay */}
                     <div className="relative z-10 space-y-6">
                       <div className="flex items-center space-x-4">
                         <div className="w-12 h-12 bg-light-grey/20 rounded-lg flex items-center justify-center group-hover:bg-light-grey/30 transition-colors">
