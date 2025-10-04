@@ -96,58 +96,16 @@ const OfficialLaunchSection = () => {
 
           {/* Where to Buy Section */}
           <div className="space-y-8">
-            <div className="text-center">
+            {/* <div className="text-center">
               <h3 className="font-display font-bold text-3xl text-pure-white mb-4">
                 Where to Buy
               </h3>
               <p className="text-signal-grey max-w-2xl mx-auto">
                 Get your BLOCKMINDS NFTs from these official and verified marketplaces
               </p>
-            </div>
+            </div> */}
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="bg-deep-charcoal/30 border-fracture-grey/20 hover:border-light-grey/30 transition-colors">
-                <CardContent className="p-6 text-center">
-                  <h4 className="font-display font-bold text-lg text-pure-white mb-2">MagicEden</h4>
-                  <p className="text-signal-grey text-sm mb-4">Primary marketplace</p>
-                     <Button variant="outline" size="sm" className="border-light-grey/50 text-light-grey">
-                    Coming Soon
-                  </Button>
-                    {/* Disable for a moment */}
-                     {/* 
-                  <Button variant="outline" size="sm" className="border-light-grey/50 text-light-grey">
-                    Visit Store
-                  </Button>
-                   */}
-                </CardContent>
-              </Card>
-
-              <Card className="bg-deep-charcoal/30 border-fracture-grey/20 hover:border-light-grey/30 transition-colors">
-                <CardContent className="p-6 text-center">
-                  <h4 className="font-display font-bold text-lg text-pure-white mb-2">Official Mint</h4>
-                  <p className="text-signal-grey text-sm mb-4">Direct from our smart contract</p>
-                    <Button variant="outline" size="sm" className="border-light-grey/50 text-light-grey">
-                    Coming Soon
-                  </Button>
-                   {/* Disable for a moment */}
-                     {/* 
-                  <Button size="sm" className="bg-gradient-light text-void-black font-semibold">
-                    Mint Now
-                  </Button>
-                   */}
-                </CardContent>
-              </Card>
-
-              <Card className="bg-deep-charcoal/30 border-fracture-grey/20 hover:border-light-grey/30 transition-colors">
-                <CardContent className="p-6 text-center">
-                  <h4 className="font-display font-bold text-lg text-pure-white mb-2">Foundation</h4>
-                  <p className="text-signal-grey text-sm mb-4">Curated NFT marketplace</p>
-                  <Button variant="outline" size="sm" className="border-light-grey/50 text-light-grey">
-                    Coming Soon
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
+           
           </div>
         </div>
       </div>
