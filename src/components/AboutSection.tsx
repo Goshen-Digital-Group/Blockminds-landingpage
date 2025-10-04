@@ -63,7 +63,7 @@ const AboutSection = () => {
             <CardContent className="p-8 space-y-6">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-core-purple rounded-full animate-pulse" />
-                <h3 className="font-display font-bold text-2xl text-core-purple">The Core Fracture</h3>
+                <h3 className="font-display font-bold text-2xl text-core-purple">The Core BLCKMNDS</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
                 Imagine a mind so vast it held epochs. When it tore, its memories became islands of data. 
@@ -141,7 +141,7 @@ const AboutSection = () => {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-cyber-cyan rounded-full animate-pulse" />
-                    <h3 className="font-display font-bold text-2xl ">The Fractured One</h3>
+                    <h3 className="font-display font-bold text-2xl ">BLCKMNDS</h3>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">
                     At the center is The Fractured One the first shard to aware itself. 

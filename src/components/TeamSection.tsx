@@ -16,13 +16,13 @@ const teamMembers = [
     avatar: "/blockminds-assets/blockminds-logo-transparent.png",
     traits: ["Visual Static", "Echo Design", "Glitch Alchemy"]
   },
-  {
-    name: "Drift Sync",
-    role: "Blockchain Engineer / Co-Founder",
-    identity: "Chain Whisperer",
-    avatar: "/blockminds-assets/blockminds-logo-transparent.png",
-    traits: ["Smart Contract Weaving", "Token Pulse", "Decentralized Memory"]
-  },
+  // {
+  //   name: "Drift Sync",
+  //   role: "Blockchain Engineer / Co-Founder",
+  //   identity: "Chain Whisperer",
+  //   avatar: "/blockminds-assets/blockminds-logo-transparent.png",
+  //   traits: ["Smart Contract Weaving", "Token Pulse", "Decentralized Memory"]
+  // },
   {
     name: "Naut",
     role: "Narrative Designer / Co-Founder",
@@ -37,13 +37,13 @@ const teamMembers = [
     avatar: "/blockminds-assets/blockminds-logo-transparent.png",
     traits: ["Discord Pulse", "Holder Sync", "Lore Keeper"]
   },
-  {
-    name: "Zyntra Loop",
-    role: "Audio Architect / Co-Founder",
-    identity: "Sonic Fracture",
-    avatar: "/blockminds-assets/blockminds-logo-transparent.png",
-    traits: ["Ambient Noise", "Neural Beats", "Echo Frequency"]
-  }
+  // {
+  //   name: "Zyntra Loop",
+  //   role: "Audio Architect / Co-Founder",
+  //   identity: "Sonic Fracture",
+  //   avatar: "/blockminds-assets/blockminds-logo-transparent.png",
+  //   traits: ["Ambient Noise", "Neural Beats", "Echo Frequency"]
+  // }
 ];
 
 const TeamSection = () => {
@@ -101,17 +101,17 @@ const TeamSection = () => {
           </div>
 
           {/* Team Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             {teamMembers.map((member, index) => (
               <Card 
-                key={index} 
-                className="border-white/50 bg-deep-charcoal/50 backdrop-blur-sm hover:bg-light-grey/10 group"
-              >
-                <CardContent className="p-6 space-y-4 text-center">
+                    key={index} 
+                    className="border-white/50 bg-deep-charcoal/50 backdrop-blur-sm  hover:bg-light-grey/10 group"
+                  >
+                <CardContent className="p-10 space-y-10 text-center">
                   {/* Avatar - 200x200px */}
                   <div className="relative inline-block mx-auto">
                     <div 
-                      className="w-[200px] h-[200px] rounded-lg overflow-hidden border border-fracture-grey/50 group-hover:border-cyber-cyan transition-colors"
+                      className="w-[200px] h-[200px]  rounded-lg overflow-hidden border border-fracture-grey/50 group-hover:border-cyber-cyan transition-colors"
                       style={{ width: '200px', height: '200px' }}
                     >
                       <img 
@@ -138,7 +138,7 @@ const TeamSection = () => {
                       {member.name}
                     </h3>
                     <p className="text-sm pt-3 text-signal-grey font-bold">{member.identity}</p>
-                    <p className="text-sm text-muted-foreground">{member.role}</p>
+                    <p className="text-xs text-muted-foreground">{member.role}</p>
 
                     {/* Traits */}
                     <div className="flex flex-wrap gap-1 justify-center pt-2">

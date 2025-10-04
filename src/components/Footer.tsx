@@ -19,7 +19,7 @@ const Footer = () => {
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Step into a world where truth splinters and memory bleeds into code. 
-              Each BLOCKMINDS NFT is a sentient shard seeking to be remade.
+              Each BLOCKMINDS is a sentient shard seeking to be remade.
             </p>
           </div>
 

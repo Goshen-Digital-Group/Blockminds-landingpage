@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { gsap } from 'gsap';
-import HeroCarousel from './HeroCarousel';
+// import HeroCarousel from './HeroCarousel';
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -77,13 +77,13 @@ const HeroSection = () => {
                   <Button size="lg" className="bg-gradient-light text-void-black hover:shadow-glow-white font-semibold">
                    BUY $MNDS
                   </Button>
-                  {/* <Button 
+                   <Button 
                     variant="outline" 
                     size="lg" 
                     className="border-light-grey/50 text-light-grey hover:bg-light-grey/10"
                   >
                     VIEW COLLECTION
-                  </Button> */}
+                  </Button>
                 </div>
               </div>
 
@@ -139,7 +139,7 @@ const HeroSection = () => {
       </section>
 
       {/* Hero Carousel */}
-      <HeroCarousel />
+      {/* <HeroCarousel /> */}
     </>
   );
 };

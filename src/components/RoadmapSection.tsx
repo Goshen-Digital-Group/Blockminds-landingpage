@@ -5,23 +5,23 @@ import { Badge } from '@/components/ui/badge';
 const roadmapPhases = [
   {
     phase: "01",
-    title: "Genesis",
-    subtitle: "The Fractured One",
+    title: "BLCKMNDS ",
+    subtitle: "The Initial Collection Drop (The Fractured One)",
     status: "active",
-    image: "/blockminds-assets/MAIN-1.png", // The Fractured One
+    image: "/blockminds-assets/MAIN-1.png", 
     items: [
-      "Genesis drop with provenance records",
+      "Official BLCKMNDS launch with provenance records",
       "Initial lore seeds released to holders",
       "Community formation & Discord launch",
       "Trait rarity system implementation"
     ]
   },
   {
-    phase: "02", 
+    phase: "02",
     title: "Community & Lore",
     subtitle: "Building the Narrative",
     status: "upcoming",
- image: "/blockminds-assets/Communitylore-Icon.png", // The Fractured One
+    image: "/blockminds-assets/Communitylore-Icon.png", // The Fractured One
     items: [
       "AMA series with development team",
       "Lore-writing campaigns & contests",
@@ -33,7 +33,7 @@ const roadmapPhases = [
     phase: "03",
     title: "Expansion",
     subtitle: "New Archetypes",
-    status: "upcoming", 
+    status: "upcoming",
     image: "/blockminds-assets/Expansion-icon.png", // The Fractured One
     items: [
       "Echo Blocks, Mindwelders release",
@@ -47,7 +47,7 @@ const roadmapPhases = [
     title: "Integration",
     subtitle: "Virtual Worlds",
     status: "planned",
-   image: "/blockminds-assets/Integration-icon.png", // The Fractured One
+    image: "/blockminds-assets/Integration-icon.png", // The Fractured One
     items: [
       "Virtual world partnerships",
       "Play-to-earn experiments launch",
@@ -72,27 +72,24 @@ const roadmapPhases = [
 
 const RoadmapSection = () => {
   return (
-    <section id="roadmap"  className="py-24 relative overflow-hidden" >
-
-
+    <section id="roadmap" className="py-24 relative overflow-hidden">
       
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-void-black via-deep-charcoal to-void-black" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-core-purple to-transparent" />
       
-                      {/* Background Image with 50% Opacity */}
-<div 
-  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage: 'url("/blockminds-assets/background/bg-3.png")',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    opacity: 0.7,  // ← This applies only to the image layer
-  }}
-/>
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url("/blockminds-assets/background/bg-3.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.7,
+        }}
+      />
 
       {/* Grid Overlay (Subtle) */}
-      <div 
+      <div
         className="absolute inset-0"
         style={{
           backgroundImage: `
@@ -106,7 +103,7 @@ const RoadmapSection = () => {
         }}
       />
 
-      <div className="container mx-auto px-4 relative z-10" >
+      <div className="container mx-auto px-4 relative z-10">
         <div className="space-y-16">
           {/* Section Header */}
           <div className="text-center space-y-6">
@@ -117,7 +114,7 @@ const RoadmapSection = () => {
               <span className="text-white">ROADMAP</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Our journey through the fractured realities is mapped across five phases, 
+              Our journey through the fractured realities is mapped across five phases,
               each unlocking new narratives, utilities, and community experiences.
             </p>
           </div>
@@ -143,12 +140,12 @@ const RoadmapSection = () => {
 
                   {/* Content & Visual */}
                   <div className={`grid md:grid-cols-2 gap-8 items-center ${
-                    index % 2 === 0 ? '' : 'md:text-right'
+                    index % 2 === 0 ? 'md:text-left' : 'md:text-right'
                   }`}>
                     {/* Text Content */}
-                    <div className={`space-y-4 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16 md:order-2'}`}>
+                    <div className={`space-y-4 ${index % 2 === 0 ? '' : 'md:order-2'}`}>
                       <div className="space-y-2">
-                        <div className="flex items-center gap-3">
+                        <div className={`flex items-center gap-3 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                           <span className="font-display font-black text-3xl text-cyber-cyan">
                             {phase.phase}
                           </span>
@@ -165,22 +162,23 @@ const RoadmapSection = () => {
                             {phase.status}
                           </Badge>
                         </div>
-                        <h3 className="font-display font-bold text-2xl">{phase.title}</h3>
+                        <h3 className="font-display font-bold text-6xl">{phase.title}</h3>
                         <p className="text-lg text-muted-foreground font-mono">{phase.subtitle}</p>
                       </div>
 
-                      <ul className="space-y-2">
+                      <ul className={`space-y-2 ${index % 2 !== 0 ? 'md:pl-4' : ''}`}>
                         {phase.items.map((item, itemIndex) => (
-                          <li key={itemIndex} className="flex items-start gap-3 text-muted-foreground">
+                          <li key={itemIndex} className={`flex gap-3 text-muted-foreground ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                            {index % 2 !== 0 && <span>{item}</span>}
                             <div className="w-1.5 h-1.5 bg-cyber-cyan rounded-full mt-2 flex-shrink-0" />
-                            <span>{item}</span>
+                            {index % 2 === 0 && <span>{item}</span>}
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     {/* Visual Card */}
-                    <div className={`${index % 2 === 0 ? 'md:pl-16' : 'md:pr-16 md:order-1'}`}>
+                    <div className={`${index % 2 === 0 ? '' : 'md:order-1'}`}>
                       <Card className="border-white/20 bg-card/30 backdrop-blur-sm hover:bg-light-grey/10">
                         <CardContent className="p-8">
                           <div className="aspect-square relative">
@@ -223,8 +221,6 @@ const RoadmapSection = () => {
               ))}
             </div>
           </div>
-
-
 
           {/* CTA */}
           <div className="text-center space-y-6 pt-20">
