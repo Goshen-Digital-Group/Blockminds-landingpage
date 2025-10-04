@@ -96,7 +96,7 @@ const Navigation = () => {
                 className="bg-gradient-light text-void-black hover:shadow-glow-white font-semibold"
                 onClick={(e) => {
                   e.preventDefault();
-                  window.open('https://example.com/join-discord', '_blank');
+                  window.open('https://mee6.xyz/i/37plYwmYJY', '_blank');
                 }}
               >
                 <span className="tracking-[.1em]">JOIN DISCORD</span>
