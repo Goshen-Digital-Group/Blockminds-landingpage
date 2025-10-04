@@ -135,65 +135,63 @@ const AboutSection = () => {
           </div>
 
           {/* The Fractured One Spotlight */}
-          <Card className="border-light-grey/50 bg-gradient-subtle backdrop-blur-sm">
-  <CardContent className="p-8">
-  <div className="grid md:grid-cols-2 gap-8 items-center">
-    {/* Text Content */}
-   <div className="space-y-4">
-    <div className="flex items-center gap-3">
-        <div className="w-3 h-3 bg-cyber-cyan rounded-full animate-pulse" />
-        <h3 className="font-display font-extrabold text-left text-6xl">BLCKMNDS</h3>
-    </div>
-    <p className="text-muted-foreground leading-relaxed text-left">
-        At the center is The Fractured One the first shard to aware itself. 
-        It is both prophet and puzzle, carrying the heaviest shards of truth yet 
-        seeing nothing whole. It walks the border between revelation and madness.
-    </p>
-    <div className="flex flex-wrap gap-4">
-        <Badge variant="secondary" className="bg-white/40  text-cyber-cyan">
+         <Card className="border-light-grey/50 bg-gradient-subtle backdrop-blur-sm">
+  <CardContent className="p-6 md:p-8">
+    <div className="grid md:grid-cols-2 gap-8 items-center">
+      {/* Text Content */}
+      <div className="space-y-4 text-center md:text-left">
+        <div className="flex justify-center md:justify-start items-center gap-3">
+          <div className="w-3 h-3 bg-cyber-cyan rounded-full animate-pulse" />
+          <h3 className="font-display font-extrabold text-4xl md:text-6xl">BLCKMNDS</h3>
+        </div>
+        <p className="text-muted-foreground leading-relaxed text-slate-100">
+          At the center is BLCKMNDS the first shard to aware itself. 
+          It is both prophet and puzzle, carrying the heaviest shards of truth yet 
+          seeing nothing whole. It walks the border between revelation and madness.
+        </p>
+        <div className="flex flex-wrap justify-center md:justify-start gap-4">
+          <Badge variant="secondary" className="bg-white/40 text-cyber-cyan">
             BLCKMNDS
-        </Badge>
-        <Badge variant="secondary" className="bg-white/40  text-cyber-cyan">
+          </Badge>
+          <Badge variant="secondary" className="bg-white/40 text-cyber-cyan">
             Genesis
-        </Badge>
-    </div>
-</div>
-
-    {/* Image Container — Clipping Frame */}
-    <div className="relative flex justify-center">
-      {/* 👇 CLIPPING CONTAINER — defines visible area, fixed height */}
-      <div 
-        className="w-full md:w-auto h-[400px] overflow-hidden rounded-lg relative"
-        style={{ 
-          background: 'transparent',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        {/* 👇 AUTO-SIZED WRAPPER — lets image expand freely */}
-        <div 
-          className="inline-block"
-          style={{
-            transform: 'scale(.8) translateX(-10px)', // 🔥 Adjust scale & position here
-            transformOrigin: 'center',
-        
-          }}
-        >
-          <img
-            src="/blockminds-assets/fractured-nft-1.png"
-            alt="BLOCKMINDS Cube Symbol"
-            className="max-w-none max-h-none object-contain"
-          />
+          </Badge>
         </div>
       </div>
 
-      {/* Optional: subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyber-cyan/10 to-transparent pointer-events-none" />
+      {/* Image Container — Fully Responsive Clipping */}
+      <div className="relative flex justify-center">
+        {/* 👇 Responsive height: smaller on mobile, full on desktop */}
+        <div 
+          className="w-full max-w-[400px] h-[300px] md:h-[400px] overflow-hidden rounded-lg relative"
+          style={{ 
+            background: 'transparent',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <div 
+            className="inline-block"
+            style={{
+              transform: 'scale(0.8) translateX(-10px)',
+              transformOrigin: 'center',
+            }}
+          >
+            <img
+              src="/blockminds-assets/fractured-nft-1.png"
+              alt="BLOCKMINDS Cube Symbol"
+              className="max-w-none max-h-none object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Optional: subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyber-cyan/10 to-transparent pointer-events-none" />
+      </div>
     </div>
-  </div>
-</CardContent>
-          </Card>
+  </CardContent>
+</Card>
         </div>
       </div>
     </section>

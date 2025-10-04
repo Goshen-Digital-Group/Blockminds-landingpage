@@ -32,7 +32,7 @@ const roadmapPhases = [
   {
     phase: "03",
     title: "Expansion",
-    subtitle: "New Archetypes",
+    subtitle: "BLCKMNDS",
     status: "upcoming",
     image: "/blockminds-assets/Expansion-icon.png", // The Fractured One
     items: [

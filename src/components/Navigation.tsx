@@ -18,7 +18,7 @@ const Navigation = () => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#About' },
-    { name: 'Archetypes', href: '#archetypes' },
+    // { name: 'Archetypes', href: '#archetypes' },
     { name: 'Roadmap', href: '#roadmap' },
     { name: 'Team', href: '#teams' },
     { name: 'Community', href: '#community' }

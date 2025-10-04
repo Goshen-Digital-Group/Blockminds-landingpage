@@ -28,7 +28,7 @@ const Footer = () => {
             <h4 className="font-display font-bold text-lg">Explore</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#about" className="text-muted-foreground hover:text-cyber-cyan transition-colors">About</a></li>
-              <li><a href="#archetypes" className="text-muted-foreground hover:text-cyber-cyan transition-colors">Archetypes</a></li>
+              {/* <li><a href="#archetypes" className="text-muted-foreground hover:text-cyber-cyan transition-colors">Archetypes</a></li> */}
               <li><a href="#roadmap" className="text-muted-foreground hover:text-cyber-cyan transition-colors">Roadmap</a></li>
               <li><a href="#community" className="text-muted-foreground hover:text-cyber-cyan transition-colors">Community</a></li>
             </ul>
